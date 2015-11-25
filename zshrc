@@ -10,4 +10,4 @@ bindkey '^[[A' up-line-or-search
 bindkey '^[[B' down-line-or-search
 bindkey '\E[Z' reverse-menu-complete
 
-export PROMPT='%1~ ⌘  '
+export PROMPT='%1~ $ '
