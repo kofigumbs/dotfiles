@@ -10,6 +10,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin indent on
@@ -39,4 +40,4 @@ set background=dark
 colorscheme solarized
 
 " Toggle NERDTree with ctrl-n
-" map <C-n> :NERDTreeToggle<CR>
+map <NUL> :NERDTreeToggle<CR>
