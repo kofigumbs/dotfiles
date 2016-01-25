@@ -16,22 +16,14 @@ call vundle#end()
 filetype plugin indent on
 " end Vundle config
 
-" Use OSX clipboard
+syntax on
 set clipboard=unnamed
-
-" Two-space tabs
 set expandtab
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-
-" Line numbers
 set number
-
-" Syntax highlighting
-syntax on
-
-" Highlight all matches on / search
+set wildmenu
 set hlsearch
 set incsearch
 
