@@ -5,9 +5,15 @@ SAVEHIST=256
 setopt append_history
 setopt hist_ignore_dups
 setopt hist_verify
+setopt prompt_subst
 
 bindkey '^[[Z' reverse-menu-complete
 
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable git
+
+precmd () { vcs_info }
+export RPROMPT='${vcs_info_msg_0_}'
 export PROMPT='%1~ $ '
 
 # The following lines were added by compinstall
