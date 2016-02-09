@@ -32,5 +32,5 @@ set incsearch
 set background=dark
 colorscheme solarized
 
-" Toggle NERDTree with ctrl-n
+" Toggle NERDTree with ctrl-space
 map <NUL> :NERDTreeToggle<CR>
