@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'hkgumbs/vim-colors-m'
 Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bronson/vim-trailing-whitespace'
@@ -16,7 +16,6 @@ call vundle#end()
 filetype plugin indent on
 " end Vundle config
 
-syntax on
 set clipboard=unnamed
 set expandtab
 set tabstop=2
@@ -28,9 +27,7 @@ set wildmenu
 set hlsearch
 set incsearch
 
-" Solarized theme settings
-set background=dark
-colorscheme solarized
+colorscheme m
 
 " Toggle NERDTree with ctrl-space
 map <NUL> :NERDTreeToggle<CR>
