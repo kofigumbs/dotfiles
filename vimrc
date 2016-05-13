@@ -11,6 +11,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -26,6 +27,8 @@ set number
 set wildmenu
 set hlsearch
 set incsearch
+set noswapfile
+set ls=2
 
 colorscheme m
 
