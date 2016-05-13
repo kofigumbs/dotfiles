@@ -13,8 +13,8 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 
 precmd () { vcs_info }
-export RPROMPT='${vcs_info_msg_0_}'
-export PROMPT='%1~ $ '
+NEWLINE=$'\n'
+export PROMPT='${NEWLINE}%B%~${vcs_info_msg_0_}${NEWLINE}$ %b'
 
 # The following lines were added by compinstall
 
