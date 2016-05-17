@@ -29,6 +29,11 @@ set hlsearch
 set incsearch
 set noswapfile
 set ls=2
+set foldmethod=indent
+set nofoldenable
+set statusline=\ %-0.48f
+
+syntax on
 
 colorscheme m
 
