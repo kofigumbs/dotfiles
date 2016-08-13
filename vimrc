@@ -1,21 +1,10 @@
-" begin Vundle config
-set nocompatible
-filetype off
-
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'hkgumbs/vim-colors-m'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'tpope/vim-fugitive'
-
-call vundle#end()
-filetype plugin indent on
-" end Vundle config
+call plug#begin()
+Plug 'hkgumbs/vim-colors-m'
+Plug 'scrooloose/nerdtree'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+call plug#end()
 
 set clipboard=unnamed
 set expandtab
@@ -31,11 +20,10 @@ set noswapfile
 set ls=2
 set foldmethod=indent
 set nofoldenable
-set statusline=\ %-0.48f
+set nowrap
 
 syntax on
 
 colorscheme m
 
-" Toggle NERDTree with ctrl-space
 map <NUL> :NERDTreeToggle<CR>
