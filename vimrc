@@ -21,8 +21,7 @@ set ls=2
 set foldmethod=indent
 set nofoldenable
 
-syntax on
+syntax off
 
-colorscheme solarized
 nnoremap j gj
 nnoremap k gk
