@@ -25,5 +25,3 @@ set nowrap
 syntax on
 
 colorscheme m
-
-map <NUL> :NERDTreeToggle<CR>
