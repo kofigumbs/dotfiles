@@ -20,8 +20,9 @@ set noswapfile
 set ls=2
 set foldmethod=indent
 set nofoldenable
-set nowrap
 
 syntax on
 
 colorscheme solarized
+nnoremap j gj
+nnoremap k gk
