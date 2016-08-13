@@ -1,5 +1,5 @@
 call plug#begin()
-Plug 'hkgumbs/vim-colors-m'
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
@@ -24,4 +24,4 @@ set nowrap
 
 syntax on
 
-colorscheme m
+colorscheme solarized
