@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 ### GIT ###
 git config --global core.editor $(which vim)
 git config --global user.name "hkgumbs"
