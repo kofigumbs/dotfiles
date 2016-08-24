@@ -1,8 +1,9 @@
-call plug#begin()
+call plug#begin("~/.vim/plugged")
 Plug 'scrooloose/nerdtree'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-fugitive'
+Plug 'wikitopian/hardmode'
 call plug#end()
 
 set clipboard=unnamed
@@ -19,8 +20,6 @@ set noswapfile
 set ls=2
 set foldmethod=indent
 set nofoldenable
-
-syntax off
 
 nnoremap j gj
 nnoremap k gk

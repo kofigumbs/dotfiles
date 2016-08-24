@@ -1,17 +1,18 @@
-call plug#begin()
+call plug#begin("~/.vim/plugged")
 Plug 'hkgumbs/vim-colors-m'
 call plug#end()
 
 colorscheme m
 
-set guifont=Cousine:h13
+syntax off
 
 set gcr=n:blinkon0
 
-set guioptions-=r
-set guioptions-=R
-set guioptions-=l
-set guioptions-=L
-set guioptions-=b
+set guifont=Cousine:h13
 
-source ~/.vimrc
+set guioptions-=L
+set guioptions-=R
+set guioptions-=b
+set guioptions-=l
+set guioptions-=r
+set guioptions+=c
