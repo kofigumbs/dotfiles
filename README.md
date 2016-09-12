@@ -19,19 +19,10 @@ gvim +PlugInstall +qall
 ```
 
 
-### Setup prompt
-
-##### BASH
+### Setup bash
 
 ```
 export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
-```
-
-##### ZSH
-
-```
-precmd () { vcs_info }
-NEWLINE=$'\n'
-export PROMPT='${NEWLINE}%B%~${vcs_info_msg_0_}${NEWLINE}$ %b'
+curl -o ~/.inputrc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/inputrc
 ```
 
