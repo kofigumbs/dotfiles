@@ -2,10 +2,15 @@
 
 
 
-### Get `.*rc` files
+### Get the files
 ```
-curl -o ~/.vimrc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/vimrc
-curl -o ~/.gvimrc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/gvimrc
+rc() {
+  curl -o ~/.$1rc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/$1rc
+}
+
+rc vim
+rc gvim
+rc input
 ```
 
 
@@ -19,10 +24,9 @@ gvim +PlugInstall +qall
 ```
 
 
-### Setup bash
+### Append to bash config file
 
 ```
-export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
-curl -o ~/.inputrc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/inputrc
+stty -ixon      # fixes ctrl-s issue in terminal applications
+export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'  # prompt
 ```
-
