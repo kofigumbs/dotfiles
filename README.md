@@ -10,6 +10,7 @@ rc() {
 
 rc vim
 rc input
+rc bash
 ```
 
 
@@ -18,14 +19,7 @@ rc input
 ```
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 vim +PlugInstall +qall
-gvim +PlugInstall +qall
 ```
 
-
-### Append to bash config file
-
-```
-stty -ixon      # fixes ctrl-s issue in terminal applications
-export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'  # prompt
-```
