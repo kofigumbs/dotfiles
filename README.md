@@ -9,7 +9,6 @@ rc() {
 }
 
 rc vim
-rc gvim
 rc input
 ```
 
