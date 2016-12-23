@@ -2,15 +2,11 @@
 
 
 
-### Get the files
+### Link `rc` files
 ```
-rc() {
-  curl -o ~/.$1rc https://raw.githubusercontent.com/hkgumbs/dotfiles/master/$1rc
-}
-
-rc vim
-rc input
-rc bash
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/bashrc ~/.bashrc
+ln -s $PWD/inputrc ~/.inputrc
 ```
 
 
