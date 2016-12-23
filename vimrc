@@ -1,3 +1,6 @@
+let mapleader=","
+let maplocalleader = ","
+
 call plug#begin("~/.vim/plugged")
 Plug 'hkgumbs/vim-colors-m'
 Plug 'scrooloose/nerdtree'
