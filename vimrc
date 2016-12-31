@@ -9,8 +9,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tmhedberg/matchit'
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
-Plug 'Shougo/vimproc.vim', {'do' : 'make', 'for': 'haskell'}
 call plug#end()
 
 set clipboard=unnamed
