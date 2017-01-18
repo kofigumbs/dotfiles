@@ -51,8 +51,8 @@ fi
 # setup prompt
 export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 
-# color cursor
-echo -ne "\e]12;#20BBFC\a"
-
 # fixes ctrl-s issue in terminal applications
 stty -ixon
+
+# quickly make a new directory for experimenting
+alias tmp='pushd $(mktemp -d)'
