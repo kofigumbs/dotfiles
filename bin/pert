@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+
+Story = Struct.new(:optimistic, :realistic, :pessimistic) do
+  def round(n, to)
+    (n / to).round * to
+  end
+
+  def estimate
+      result = (optimistic + realistic * 4 + pessimistic) / 6
+      result += standardDeviation * 2
+      round(result, 0.25)
+  end
+
+  def standardDeviation
+      (pessimistic - optimistic) / 6
+  end
+end
+
+
+if ARGV.length != 3
+  puts "Usage: pert OPTIMISTIC REALISTIC PESSIMISTIC"
+else
+  estimates = ARGV.map(&:to_f)
+  story = Story.new(estimates[0], estimates[1], estimates[2])
+  puts story.estimate
+end
