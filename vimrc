@@ -3,6 +3,7 @@ let maplocalleader = ','
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
+Plug 'christoomey/vim-system-copy'
 Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
