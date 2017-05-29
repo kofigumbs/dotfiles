@@ -41,6 +41,18 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 inoremap <silent> <C-b> <left>
 inoremap <silent> <C-f> <right>
 
+"Neovim terminal leader
+if has('nvim')
+  tnoremap <C-[> <C-\><C-n>
+endif
+
+"Neovim live search replace
+if exists('&inccommand')
+  set inccommand=split
+endif
+
+filetype plugin indent on
+
 let g:elm_format_autosave = 1
 let g:elm_make_output_file = '/dev/null'
 let g:airline#extensions#whitespace#enabled = 0
