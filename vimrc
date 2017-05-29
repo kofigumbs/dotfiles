@@ -10,15 +10,16 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Language-specific
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
 Plug 'keith/swift.vim', {'for': 'swift'}
 call plug#end()
 
 set clipboard=unnamed
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set backspace=2
 set number
 set wildmenu
@@ -29,10 +30,9 @@ set ls=2
 set foldmethod=indent
 set nofoldenable
 set nowrap
-set colorcolumn=81
+set spell
 set winwidth=84
 set winminwidth=20
-set spell
 
 nnoremap j gj
 nnoremap k gk
