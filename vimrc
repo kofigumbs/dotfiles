@@ -51,6 +51,9 @@ if exists('&inccommand')
   set inccommand=split
 endif
 
+"Ignore junk
+set wildignore+=*/tmp/*,*/node_modules/*,*.class,*.pyc,*.beam
+
 filetype plugin indent on
 
 let g:elm_format_autosave = 1
