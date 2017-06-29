@@ -19,3 +19,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +PlugInstall +qall
 ```
 
+
+
+### Set git email per project
+
+```
+git config --global user.useConfigOnly true
+```
