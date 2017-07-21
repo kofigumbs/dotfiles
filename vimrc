@@ -69,3 +69,7 @@ let g:solarized_hitrail = 1
 let NERDTreeShowHidden = 1
 
 colorscheme solarized
+
+" Nicer vertical splits
+set fillchars+=vert:│
+hi VertSplit ctermbg=NONE guibg=NONE
