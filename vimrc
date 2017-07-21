@@ -34,10 +34,15 @@ set spell
 set winwidth=84
 set winminwidth=20
 
+" Ignore line wrap with j/k
 nnoremap j gj
 nnoremap k gk
+
+" Ctrl-N to open NERDTree
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
+
+" Readline shortcuts in insert mode
 inoremap <silent> <C-b> <left>
 inoremap <silent> <C-f> <right>
 
