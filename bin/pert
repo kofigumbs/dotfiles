@@ -1,26 +1,15 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env python
 
-Story = Struct.new(:optimistic, :realistic, :pessimistic) do
-  def round(n, to)
-    (n / to).round * to
-  end
+import sys
 
-  def estimate
-      result = (optimistic + realistic * 4 + pessimistic) / 6
-      result += standardDeviation * 2
-      round(result, 0.25)
-  end
+def estimate(optimistic, realistic, pessimistic):
+    avg = (optimistic + realistic * 4 + pessimistic) / 6
+    stdDev = (pessimistic - optimistic) / 6
+    truncate = lambda n: round(n * 4) / 4
+    return truncate(avg + stdDev * 2)
 
-  def standardDeviation
-      (pessimistic - optimistic) / 6
-  end
-end
+if len(sys.argv) is not 4:
+    print("Usage: pert OPTIMISTIC REALISTIC PESSIMISTIC")
 
-
-if ARGV.length != 3
-  puts "Usage: pert OPTIMISTIC REALISTIC PESSIMISTIC"
-else
-  estimates = ARGV.map(&:to_f)
-  story = Story.new(estimates[0], estimates[1], estimates[2])
-  puts story.estimate
-end
+else:
+    print(estimate(*map(float, sys.argv[1:])))
