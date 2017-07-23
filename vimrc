@@ -34,7 +34,6 @@ set ls=2
 set foldmethod=indent
 set nofoldenable
 set nowrap
-set spell
 set winwidth=84
 set winminwidth=20
 
@@ -42,9 +41,11 @@ set winminwidth=20
 nnoremap j gj
 nnoremap k gk
 
-" Ctrl-N to open NERDTree
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
+" Toggle spell check with Leader-S
+nnoremap <leader>s :setlocal spell!<cr>
 
+" Open NERDTree with Ctrl-N
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Readline shortcuts in insert mode
 inoremap <silent> <C-b> <left>
