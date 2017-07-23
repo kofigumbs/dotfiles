@@ -10,9 +10,13 @@ Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Language-specific
+""""
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
+Plug 'Quramy/tsuquyomi', {'for': 'typescript'}
+Plug 'Shougo/vimproc', {'do': 'make'}
+Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'keith/swift.vim', {'for': 'swift'}
+Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 call plug#end()
 
 set clipboard=unnamed
