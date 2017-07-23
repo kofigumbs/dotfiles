@@ -54,5 +54,8 @@ export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 # fixes ctrl-s issue in terminal applications
 stty -ixon
 
+# commit to Neovim
+alias v='nvim .'
+
 # quickly make a new directory for experimenting
 alias tmp='pushd $(mktemp -d)'
