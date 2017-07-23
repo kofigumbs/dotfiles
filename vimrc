@@ -64,6 +64,12 @@ endif
 "Ignore junk
 set wildignore+=*/tmp/*,*/node_modules/*,*.class,*.pyc,*.beam
 
+" Wrap words in quick fix
+augroup quickfix
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
+
 filetype plugin indent on
 
 let g:elm_format_autosave = 1
