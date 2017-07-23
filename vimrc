@@ -84,3 +84,13 @@ colorscheme solarized
 " Nicer vertical splits
 set fillchars+=vert:│
 hi VertSplit ctermbg=NONE guibg=NONE
+
+" GVim
+set gcr=n:blinkon0
+set guioptions-=L
+set guioptions-=R
+set guioptions-=T
+set guioptions-=b
+set guioptions-=l
+set guioptions-=r
+set guioptions+=c
