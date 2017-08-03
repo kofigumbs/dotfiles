@@ -51,9 +51,11 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 inoremap <silent> <C-b> <left>
 inoremap <silent> <C-f> <right>
 
-"Neovim terminal leader
+"Neovim terminal helpers
 if has('nvim')
   tnoremap <C-[> <C-\><C-n>
+  au TermOpen * setlocal nonumber norelativenumber
+  command! -nargs=* TE split | terminal <args>
 endif
 
 "Neovim live search replace
@@ -70,7 +72,12 @@ augroup quickfix
   autocmd FileType qf setlocal wrap
 augroup END
 
+" Indentation (default to 2)
 filetype plugin indent on
+au FileType elm setl sw=4 sts=4 et
+au FileType json setl sw=4 sts=4 et
+au FileType python setl sw=4 sts=4 et
+au FileType swift setl sw=4 sts=4 et
 
 let g:elm_format_autosave = 1
 let g:elm_make_output_file = '/dev/null'
