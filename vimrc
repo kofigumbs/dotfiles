@@ -41,9 +41,6 @@ set winminwidth=20
 nnoremap j gj
 nnoremap k gk
 
-" Toggle spell check with Leader-S
-nnoremap <leader>s :setlocal spell!<cr>
-
 " Open NERDTree with Ctrl-N
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
