@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 if [[ -z "$1" ]]
 then
     echo "USAGE: git-reauthor NEW_EMAIL"
@@ -7,6 +9,8 @@ then
     exit
 fi
 
+
+# RE-AUTHOR OLD COMMITS
 
 env NEW_EMAIL="$1" git filter-branch -f --commit-filter '
     if [ "$GIT_COMMITTER_NAME" = "Kofi Gumbs" ]
@@ -18,3 +22,8 @@ env NEW_EMAIL="$1" git filter-branch -f --commit-filter '
         git commit-tree "$@";
     fi
 ' HEAD
+
+
+# USE THIS EMAIL GOING FORWARD
+
+git config user.email "$1"
