@@ -19,23 +19,24 @@ Plug 'keith/swift.vim', {'for': 'swift'}
 Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 call plug#end()
 
+set backspace=2
 set clipboard=unnamed
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set backspace=2
-set number
-set wildmenu
+set foldmethod=indent
 set hlsearch
 set incsearch
-set noswapfile
 set ls=2
-set foldmethod=indent
 set nofoldenable
+set noswapfile
 set nowrap
-set winwidth=84
+set number
+set shiftwidth=2
+set softtabstop=2
+set spell
+set tabstop=2
+set wildmenu
 set winminwidth=20
+set winwidth=84
 
 " Ignore line wrap with j/k
 nnoremap j gj
@@ -76,12 +77,12 @@ au FileType json setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
 
-let g:elm_format_autosave = 1
-let g:elm_make_output_file = '/dev/null'
+let NERDTreeShowHidden = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'solarized'
+let g:elm_format_autosave = 1
+let g:elm_make_output_file = '/dev/null'
 let g:solarized_hitrail = 1
-let NERDTreeShowHidden = 1
 
 colorscheme solarized
 
