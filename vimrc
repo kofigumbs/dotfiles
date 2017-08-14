@@ -61,7 +61,7 @@ if exists('&inccommand')
 endif
 
 "Ignore junk
-set wildignore+=*/tmp/*,*/node_modules/*,*.class,*.pyc,*.beam
+set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
 
 " Wrap words in quick fix
 augroup quickfix
