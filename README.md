@@ -25,4 +25,5 @@ vim +PlugInstall +qall
 
 ```
 git config --global user.useConfigOnly true
+git config --global --unset-all user.email
 ```
