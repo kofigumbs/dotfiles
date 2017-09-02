@@ -12,11 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 """"
 Plug 'ElmCast/elm-vim', {'for': 'elm'}
-Plug 'Quramy/tsuquyomi', {'for': 'typescript'}
-Plug 'Shougo/vimproc', {'do': 'make'}
-Plug 'eagletmt/ghcmod-vim', {'for': 'haskell'}
 Plug 'keith/swift.vim', {'for': 'swift'}
-Plug 'leafgarland/typescript-vim', {'for': 'typescript'}
 call plug#end()
 
 set backspace=2
