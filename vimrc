@@ -83,6 +83,14 @@ colorscheme solarized
 set fillchars+=vert:\ 
 hi VertSplit ctermbg=7 guibg=7
 
+" Formatters
+function! s:withReload(cmd)
+  execute a:cmd
+  edit
+endfunction
+autocmd BufWritePost *.elm call s:withReload('!elm-format --yes %')
+autocmd BufWritePost *.py call s:withReload('!yapf --in-place %')
+
 " GVim
 set gcr=n:blinkon0
 set guioptions-=L
