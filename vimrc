@@ -5,16 +5,15 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'janko-m/vim-test'
 Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-""""
-Plug 'ElmCast/elm-vim', {'for': 'elm'}
-Plug 'keith/swift.vim', {'for': 'swift'}
 call plug#end()
 
+" Sane defaults
 set backspace=2
 set foldmethod=indent
 set hlsearch
@@ -28,12 +27,14 @@ set spell
 set wildmenu
 set winminwidth=20
 set winwidth=84
+syntax off
 
 " Ignore line wrap with j/k
 nnoremap j gj
 nnoremap k gk
 
-" Open NERDTree with Ctrl-N
+" NERDTree
+let NERDTreeShowHidden = 1
 nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Readline shortcuts in insert mode
@@ -44,7 +45,7 @@ inoremap <silent> <C-f> <right>
 if has('nvim')
   tnoremap <C-[> <C-\><C-n>
   au TermOpen * setlocal nonumber norelativenumber
-  command! -nargs=* TE split | terminal <args>
+  let test#strategy = "neovim"
 endif
 
 "Neovim live search replace
@@ -72,13 +73,10 @@ au FileType json setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
 
-let NERDTreeShowHidden = 1
+" Solarized
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline_theme = 'solarized'
-let g:elm_format_autosave = 1
-let g:elm_make_output_file = '/dev/null'
 let g:solarized_hitrail = 1
-
 colorscheme solarized
 
 " Invisible vertical splits
