@@ -16,8 +16,6 @@ Plug 'keith/swift.vim', {'for': 'swift'}
 call plug#end()
 
 set backspace=2
-set clipboard=unnamed
-set expandtab
 set foldmethod=indent
 set hlsearch
 set incsearch
@@ -26,10 +24,7 @@ set nofoldenable
 set noswapfile
 set nowrap
 set number
-set shiftwidth=2
-set softtabstop=2
 set spell
-set tabstop=2
 set wildmenu
 set winminwidth=20
 set winwidth=84
@@ -66,7 +61,11 @@ augroup quickfix
   autocmd FileType qf setlocal wrap
 augroup END
 
-" Indentation (default to 2)
+" Indentation
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 filetype plugin indent on
 au FileType elm setl sw=4 sts=4 et
 au FileType json setl sw=4 sts=4 et
@@ -82,9 +81,9 @@ let g:solarized_hitrail = 1
 
 colorscheme solarized
 
-" Nicer vertical splits
-set fillchars+=vert:│
-hi VertSplit ctermbg=NONE guibg=NONE
+" Invisible vertical splits
+set fillchars+=vert:\ 
+hi VertSplit ctermbg=7 guibg=7
 
 " GVim
 set gcr=n:blinkon0
