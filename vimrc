@@ -6,7 +6,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
-Plug 'scrooloose/nerdtree'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
@@ -27,15 +26,11 @@ set spell
 set wildmenu
 set winminwidth=20
 set winwidth=84
-syntax off
+syntax on
 
 " Ignore line wrap with j/k
 nnoremap j gj
 nnoremap k gk
-
-" NERDTree
-let NERDTreeShowHidden = 1
-nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 
 " Readline shortcuts in insert mode
 inoremap <silent> <C-b> <left>
