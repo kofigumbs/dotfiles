@@ -1,5 +1,5 @@
 # ~/.\*
 
 ```
-./bin/setup-mac
+./setup-[mac|ubuntu]
 ```

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -ex
+
+wget https://github.com/neovim/neovim/releases/download/v0.2.2/nvim.appimage
+chmod +x nvim.appimage
+sudo mv nvim.appimage /usr/local/bin/
+
+source setup/shared.sh
