@@ -5,6 +5,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'hkgumbs/elm-vim'
 Plug 'janko-m/vim-test'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
@@ -55,6 +56,9 @@ augroup quickfix
   autocmd FileType qf setlocal wrap
 augroup END
 
+" Formatters
+autocmd BufWritePost *.elm call g:elm#format()
+
 " Indentation
 set expandtab
 set shiftwidth=2
@@ -73,14 +77,6 @@ colorscheme solarized
 " Invisible vertical splits
 set fillchars+=vert:\ 
 hi VertSplit ctermbg=7 guibg=7
-
-" Formatters
-function! s:withReload(cmd)
-  execute a:cmd
-  edit
-endfunction
-autocmd BufWritePost *.elm call s:withReload('!elm-format --yes %')
-autocmd BufWritePost *.py call s:withReload('!yapf --in-place %')
 
 " GVim
 set gcr=n:blinkon0
