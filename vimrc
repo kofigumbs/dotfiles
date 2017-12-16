@@ -8,8 +8,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'janko-m/vim-test'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Sane defaults
@@ -69,8 +67,6 @@ au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
 
 " Solarized
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline_theme = 'solarized'
 let g:solarized_hitrail = 1
 colorscheme solarized
 
