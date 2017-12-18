@@ -28,12 +28,13 @@ shopt -s globstar
 
 
 # enable color support of ls
-export CLICOLOR=1
+alias ls='ls --color'
 alias ll='ls -AFGgohl'
 
 
 # enable programmable completion features
 safe_source() { [ -f $1 ] && . $1; }
+safe_source /etc/bash_completion.d/git-prompt
 safe_source /usr/local/etc/bash_completion
 safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
