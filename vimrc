@@ -1,5 +1,4 @@
-let mapleader=','
-let maplocalleader = ','
+autocmd!
 
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
@@ -36,11 +35,9 @@ inoremap <silent> <C-b> <left>
 inoremap <silent> <C-f> <right>
 
 "Neovim terminal helpers
-if has('nvim')
-  tnoremap <C-[> <C-\><C-n>
-  au TermOpen * setlocal nonumber norelativenumber
-  let test#strategy = "neovim"
-endif
+tnoremap <C-[> <C-\><C-n>
+au TermOpen * setlocal nonumber | startinsert
+let test#strategy = "neovim"
 
 "Neovim live search replace
 if exists('&inccommand')
