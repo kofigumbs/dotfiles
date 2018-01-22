@@ -5,7 +5,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'hkgumbs/elm-vim'
-Plug 'janko-m/vim-test'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -37,7 +36,6 @@ inoremap <silent> <C-f> <right>
 "Neovim terminal helpers
 tnoremap <C-[> <C-\><C-n>
 au TermOpen * setlocal nonumber | startinsert
-let test#strategy = "neovim"
 
 "Neovim live search replace
 if exists('&inccommand')
