@@ -28,8 +28,8 @@ shopt -s globstar
 
 
 # enable color support of ls
-alias ls='ls --color'
-alias ll='ls -AFGgohl'
+alias ls='gls --color'
+alias ll='gls -AFGgohl'
 
 
 # enable programmable completion features

@@ -41,9 +41,6 @@ endif
 " Ignore junk
 set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
 
-" Formatters
-autocmd BufWritePost *.elm call g:elm#format()
-
 " Indentation
 set expandtab
 set shiftwidth=2
