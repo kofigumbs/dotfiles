@@ -5,6 +5,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'hkgumbs/elm-vim'
+Plug 'maxbrunsfeld/vim-emacs-bindings'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -28,10 +29,6 @@ syntax on
 " Ignore line wrap with j/k
 nnoremap j gj
 nnoremap k gk
-
-" Readline shortcuts in insert mode
-inoremap <silent> <C-b> <left>
-inoremap <silent> <C-f> <right>
 
 "Neovim terminal helpers
 tnoremap <C-[> <C-\><C-n>
