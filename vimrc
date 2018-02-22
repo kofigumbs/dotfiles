@@ -30,16 +30,15 @@ syntax on
 nnoremap j gj
 nnoremap k gk
 
-"Neovim terminal helpers
-tnoremap <C-[> <C-\><C-n>
-au TermOpen * setlocal nonumber | startinsert
-
-"Neovim live search replace
-if exists('&inccommand')
+" Neovim - I should check out Vim8 at some point,
+" since I'm really only taking advantage of terminals.
+if has('nvim')
+  tnoremap <C-[> <C-\><C-n>
+  au TermOpen * setlocal nonumber | startinsert
   set inccommand=split
 endif
 
-"Ignore junk
+" Ignore junk
 set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
 
 " Formatters
