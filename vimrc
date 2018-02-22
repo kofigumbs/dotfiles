@@ -4,8 +4,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'hkgumbs/elm-vim'
 Plug 'maxbrunsfeld/vim-emacs-bindings'
+Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -42,12 +42,6 @@ endif
 "Ignore junk
 set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
 
-" Wrap words in quick fix
-augroup quickfix
-  autocmd!
-  autocmd FileType qf setlocal wrap
-augroup END
-
 " Formatters
 autocmd BufWritePost *.elm call g:elm#format()
 
@@ -57,10 +51,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 filetype plugin indent on
-au FileType elm setl sw=4 sts=4 et
-au FileType json setl sw=4 sts=4 et
-au FileType python setl sw=4 sts=4 et
-au FileType swift setl sw=4 sts=4 et
 
 " Solarized
 let g:solarized_hitrail = 1
@@ -70,12 +60,11 @@ colorscheme solarized
 set fillchars+=vert:\ 
 hi VertSplit ctermbg=7 guibg=7
 
-" GVim
-set gcr=n:blinkon0
-set guioptions-=L
-set guioptions-=R
-set guioptions-=T
-set guioptions-=b
-set guioptions-=l
-set guioptions-=r
-set guioptions+=c
+" Language-specific 😕
+let g:elm_make_output_file = '/dev/null'
+let g:elm_format_autosave = 1
+let g:omni_sql_no_default_maps = 1
+au FileType elm setl sw=4 sts=4 et
+au FileType json setl sw=4 sts=4 et
+au FileType python setl sw=4 sts=4 et
+au FileType swift setl sw=4 sts=4 et
