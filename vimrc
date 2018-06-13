@@ -1,7 +1,6 @@
 autocmd!
 
 call plug#begin('~/.vim/plugged')
-Plug 'altercation/vim-colors-solarized'
 Plug 'christoomey/vim-system-copy'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'maxbrunsfeld/vim-emacs-bindings'
@@ -20,7 +19,6 @@ set nofoldenable
 set noswapfile
 set nowrap
 set number
-set spell
 set wildmenu
 set winminwidth=20
 set winwidth=84
@@ -47,10 +45,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 filetype plugin indent on
-
-" Solarized
-let g:solarized_hitrail = 1
-colorscheme solarized
 
 " Invisible vertical splits
 set fillchars+=vert:\ 
