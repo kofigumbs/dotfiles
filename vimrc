@@ -7,6 +7,7 @@ Plug 'maxbrunsfeld/vim-emacs-bindings'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 call plug#end()
 
 " Sane defaults
