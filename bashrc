@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -21,16 +23,10 @@ shopt -s checkwinsize
 
 # the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-shopt -s globstar
+# TODO shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-
-# enable color support of ls
-alias ls='gls --color'
-alias ll='gls -AFGgohl'
-
 
 # enable programmable completion features
 safe_source() { [ -f $1 ] && . $1; }
@@ -48,5 +44,9 @@ export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 # fixes ctrl-s issue in terminal applications
 stty -ixon
 
-# quickly make a new directory for experimenting
+# # #
 alias tmp='pushd $(mktemp -d)'
+alias ll='ls -AFGgohl'
+
+export VISUAL='/usr/local/bin/nvim'
+export EDITOR="$VISUAL"
