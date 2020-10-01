@@ -67,3 +67,6 @@ au FileType json setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
 
+" Avoid nested NeoVim instances (i.e. editing git messages)
+let $GIT_EDITOR = 'nvr -cc split --remote-wait'
+autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete

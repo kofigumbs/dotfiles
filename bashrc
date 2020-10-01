@@ -48,5 +48,5 @@ stty -ixon
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
 
-export VISUAL='/usr/local/bin/nvim'
+export VISUAL="nvim"
 export EDITOR="$VISUAL"

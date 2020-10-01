@@ -13,8 +13,9 @@ ln -fs $PWD/vimrc ~/.config/nvim/init.vim
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-
 nvim +PlugInstall +qall
+
+sudo pip3 install neovim-remote
 
 
 # Set git email per project
