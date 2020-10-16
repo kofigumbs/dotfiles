@@ -47,6 +47,12 @@ stty -ixon
 # # #
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
+alias cds='cd ~/workspace/source'
 
-export VISUAL="nvim"
+# Avoid nested NeoVim instances (i.e. editing git messages)
+if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
+  export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
+else
+  export VISUAL="nvim"
+fi
 export EDITOR="$VISUAL"
