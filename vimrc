@@ -62,6 +62,7 @@ hi VertSplit ctermbg=7 guibg=7
 let g:elm_make_output_file = '/dev/null'
 let g:elm_format_autosave = 1
 let g:omni_sql_no_default_maps = 1
+au FileType cpp setl sw=4 sts=4 et
 au FileType elm setl sw=4 sts=4 et
 au FileType json setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
