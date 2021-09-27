@@ -3,6 +3,7 @@ autocmd!
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'maxbrunsfeld/vim-emacs-bindings'
 Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
@@ -34,7 +35,7 @@ highlight Search ctermbg=LightGray
 
 " Fast fuzzy file finder that respects .gitignore
 nnoremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 " Neovim - I should check out Vim8 at some point,
 " since I'm really only taking advantage of terminals.
