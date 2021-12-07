@@ -33,6 +33,8 @@ shopt -s extglob
 safe_source() { [ -f $1 ] && . $1; }
 safe_source /etc/bash_completion.d/git-prompt
 safe_source /usr/local/etc/bash_completion
+safe_source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+safe_source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
