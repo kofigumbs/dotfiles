@@ -31,6 +31,7 @@ shopt -s extglob
 
 # Enable programmable completion features
 safe_source() { [ -f $1 ] && . $1; }
+safe_source $HOME/.secrets.env
 safe_source /etc/bash_completion.d/git-prompt
 safe_source /usr/local/etc/bash_completion
 safe_source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
@@ -60,4 +61,3 @@ else
 fi
 export EDITOR="$VISUAL"
 
-. $HOME/.secrets.env
