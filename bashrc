@@ -53,11 +53,18 @@ alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
 alias cds='cd ~/workspace/source'
 
-# Avoid nested NeoVim instances (i.e. editing git messages)
-if [ -n "$NVIM_LISTEN_ADDRESS" ]; then
-  export VISUAL="nvr -cc split --remote-wait +'set bufhidden=wipe'"
-else
-  export VISUAL="nvim"
-fi
-export EDITOR="$VISUAL"
+# Avoid nested NeoVim instances (i.e. git commit from a term split)
+v() {
+  if [ -z "$NVIM_LISTEN_ADDRESS" ]
+  then # NeoVim is _not_ already open in this terminal
+    nvim $@
+  elif [ -z "$*" ]
+  then # NeoVim is already open -- no arguments were passed
+    nvr +new
+  else # NeoVim is already open -- forward passed arguments
+    nvr -cc split --remote-wait +'set bufhidden=wipe' $@
+  fi
+}
+export VISUAL="v"
+export EDITOR="v"
 
