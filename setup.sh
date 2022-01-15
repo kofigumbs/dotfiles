@@ -31,7 +31,7 @@ sudo pip3 install neovim-remote
 
 # Set git email per project
 
-git config --global init.defaultBranch
+git config --global init.defaultBranch main
 git config --global user.useConfigOnly true
 git config --global --unset-all user.email
 git config --global user.name 'Kofi Gumbs'
