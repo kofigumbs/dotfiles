@@ -37,13 +37,10 @@ highlight Search ctermbg=LightGray
 nnoremap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
-" Neovim - I should check out Vim8 at some point,
-" since I'm really only taking advantage of terminals.
-if has('nvim')
-  tnoremap <C-[> <C-\><C-n>
-  au TermOpen * setlocal nonumber | startinsert
-  set inccommand=split
-endif
+" Terminal settings
+tnoremap <C-[> <C-\><C-n>
+au TermOpen * setlocal nonumber | startinsert
+set inccommand=split
 
 " Ignore junk
 set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
@@ -59,10 +56,7 @@ filetype plugin indent on
 set fillchars+=vert:\ 
 hi VertSplit ctermbg=7 guibg=7
 
-" Language-specific 😕
-let g:elm_make_output_file = '/dev/null'
-let g:elm_format_autosave = 1
-let g:omni_sql_no_default_maps = 1
+" Language-specific
 au FileType cpp setl sw=4 sts=4 et
 au FileType elm setl sw=4 sts=4 et
 au FileType json setl sw=4 sts=4 et
