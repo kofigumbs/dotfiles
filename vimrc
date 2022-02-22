@@ -59,6 +59,5 @@ hi VertSplit ctermbg=7 guibg=7
 " Language-specific
 au FileType cpp setl sw=4 sts=4 et
 au FileType elm setl sw=4 sts=4 et
-au FileType json setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
