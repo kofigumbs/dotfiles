@@ -39,6 +39,7 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
 
 " Terminal settings
 tnoremap <C-[> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 au TermOpen * setlocal nonumber | startinsert
 set inccommand=split
 
