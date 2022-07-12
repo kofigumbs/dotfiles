@@ -11,7 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 call plug#end()
 
-" Sane defaults
+" Defaults
 set backspace=2
 set foldmethod=indent
 set hlsearch
