@@ -16,6 +16,7 @@ set backspace=2
 set foldmethod=indent
 set hlsearch
 set incsearch
+set linebreak
 set ls=2
 set nofoldenable
 set noswapfile
@@ -25,10 +26,6 @@ set wildmenu
 set winminwidth=20
 set winwidth=84
 syntax on
-
-" Ignore line wrap with j/k
-nnoremap j gj
-nnoremap k gk
 
 " Make solarized terminal colors less harsh
 highlight Search ctermbg=LightGray
