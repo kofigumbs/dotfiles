@@ -58,4 +58,29 @@ export EDITOR="nvim"
 # Aliases
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
-alias cds='cd ~/workspace/source'
+
+screenshot() {
+  URL="$1"
+
+  if [[ -z "$URL" ]]
+  then
+      echo "Take a screenshot with Google Chrome. Default size is 1024x1024."
+      echo ""
+      echo "USAGE:"
+      echo "  screenshot PATH|URL [SIZE]"
+      echo ""
+      return 1
+  fi
+
+  if [[ "$URL" != http* ]]
+  then
+      URL="file://`realpath $URL`"
+  fi
+
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless \
+      --default-background-color=00000000 \
+      --window-size="${2:-1024x1024}" \
+      --screenshot="$HOME/Desktop/`date +"%Y-%m-%dT%H:%M:%S"`.png" \
+      "$URL"
+}
