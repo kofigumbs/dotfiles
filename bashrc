@@ -48,10 +48,11 @@ export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 # Fixes ctrl-s issue in terminal applications
 stty -ixon
 
+# Editor
+export VISUAL="nvim"
+export EDITOR="nvim"
+
 # Aliases
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
 alias cds='cd ~/workspace/source'
-
-export VISUAL="~/Documents/dotfiles/editor"
-export EDITOR="~/Documents/dotfiles/editor"
