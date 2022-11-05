@@ -1,61 +1,32 @@
-export BASH_SILENCE_DEPRECATION_WARNING=1
-
-# If not running interactively, don't do anything
 case $- in
-    *i*) ;;
+    *i*) ;; # only execute file when shell is interactive
       *) return;;
 esac
 
-# Don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
-HISTCONTROL=ignoreboth
-
-# Append to the history file, don't overwrite it
-shopt -s histappend
-
-# For setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTCONTROL=ignoreboth # ignore duplicate lines and lines starting with space
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-# Check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
-shopt -s checkwinsize
-
-# The pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-# TODO shopt -s globstar
+shopt -s histappend # append to the history file instaed of overwriting it
+shopt -s checkwinsize # update window size after each command
 shopt -s extglob
-
-# Make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
-# Enable programmable completion features
-safe_source() { [ -f $1 ] && . $1; }
-safe_source $HOME/.secrets.env
-safe_source $HOME/.cargo/env
-safe_source $HOME/asdf.sh
-safe_source $HOME/asdf/completions/asdf.bash
-safe_source /etc/bash_completion.d/git-prompt
-safe_source /usr/local/etc/bash_completion
-safe_source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-safe_source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
-safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-safe_source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-
-# Local binaries
-export PATH="$PATH:~/.local/bin"
-
-# Setup prompt
-export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
-
-# Fixes ctrl-s issue in terminal applications
 stty -ixon
 
-# Editor
+source_if_exists() { [ -f $1 ] && . $1; }
+source_if_exists $HOME/asdf/completions/asdf.bash
+source_if_exists /etc/bash_completion.d/git-prompt
+source_if_exists /usr/local/etc/bash_completion
+source_if_exists /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+source_if_exists /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+source_if_exists /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+source_if_exists /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
+
+export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
+export PATH="$PATH:~/.local/bin"
 export VISUAL="nvim"
 export EDITOR="nvim"
+export BASH_SILENCE_DEPRECATION_WARNING=1 # ignore macOS deprecation
 
-# Aliases
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
 
