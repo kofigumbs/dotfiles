@@ -18,6 +18,10 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 nvim +PlugInstall +qall
 
+# Install asdf
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+~/.asdf/bin/asdf update
+
 # Set git email per project
 git config --global init.defaultBranch main
 git config --global user.useConfigOnly true
