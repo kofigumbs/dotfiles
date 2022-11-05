@@ -10,7 +10,7 @@
     ln -fs $PWD/inputrc ~/.inputrc
     ln -fs $PWD/vimrc ~/.config/nvim/init.vim
 
-#### Install Homebrew
+#### Install homebrew
 
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     brew bundle install
@@ -25,17 +25,13 @@
     git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
     ~/.asdf/bin/asdf update
 
-#### Set git email per project
+#### Configure git
 
     git config --global init.defaultBranch main
     git config --global user.useConfigOnly true
-    git config --global --unset-all user.email
     git config --global user.name 'Kofi Gumbs'
+    git config --global --unset-all user.email # per project by default
 
-#### Exit terminal so that changes take effect
+#### Done! Changes take effect in new terminals
 
     exit
-
-<!--
-vi: ft=markdown
--->
