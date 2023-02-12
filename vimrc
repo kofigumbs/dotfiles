@@ -31,8 +31,7 @@ syntax on
 highlight Search ctermbg=LightGray
 
 " Fast fuzzy file finder that respects .gitignore
-nnoremap <C-p> :FZF<CR>
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+nnoremap <C-p> :GitFiles<CR>
 
 " Terminal settings
 tnoremap <C-[> <C-\><C-n>
