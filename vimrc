@@ -30,8 +30,8 @@ syntax on
 " Make solarized terminal colors less harsh
 highlight Search ctermbg=LightGray
 
-" Fast fuzzy file finder that respects .gitignore
-nnoremap <C-p> :GitFiles<CR>
+" Configure FZF to show untracked files, exclude .gitignore'd files, and use the same directory as fugitive
+nnoremap <C-p> :call fzf#run(fzf#wrap(fzf#vim#with_preview({ 'dir': FugitiveWorkTree(), 'source': 'git ls-files --cached --others --exclude-standard' })))<CR>
 
 " Terminal settings
 tnoremap <C-[> <C-\><C-n>
