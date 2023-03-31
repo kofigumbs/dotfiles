@@ -14,18 +14,12 @@ stty -ixon
 
 source_if_exists() { [ -f $1 ] && . $1; }
 source_if_exists $HOME/.asdf/completions/asdf.bash
-source_if_exists /etc/bash_completion.d/git-prompt
 source_if_exists /usr/local/etc/bash_completion
-source_if_exists /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source_if_exists /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
-source_if_exists /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-source_if_exists /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
 
-export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
-export PATH="$PATH:~/.local/bin"
 export VISUAL="nvim"
 export EDITOR="nvim"
 export BASH_SILENCE_DEPRECATION_WARNING=1 # ignore macOS deprecation
+export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
