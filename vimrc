@@ -2,6 +2,7 @@ autocmd!
 
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-system-copy'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'maxbrunsfeld/vim-emacs-bindings'
@@ -9,6 +10,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+" Triumph
+Plug 'kofigumbs/fugitive-azure-devops.vim'
 call plug#end()
 
 " Defaults
@@ -30,8 +33,19 @@ syntax on
 " Make solarized terminal colors less harsh
 highlight Search ctermbg=LightGray
 
-" Configure FZF to show untracked files, exclude .gitignore'd files, and use the same directory as fugitive
-nnoremap <C-p> :call fzf#run(fzf#wrap(fzf#vim#with_preview({ 'dir': FugitiveWorkTree(), 'source': 'git ls-files --cached --others --exclude-standard' })))<CR>
+" Configure FZF
+function! ProjectFiles()
+  let l:cmd = " <(git -C @ ls-files --cached --others --exclude-standard | sed 's|^|@/|')"
+  return 'cat'
+        \ . substitute(l:cmd, '@', 'decode', 'g')
+        \ . substitute(l:cmd, '@', 'hubtran-web', 'g')
+        \ . substitute(l:cmd, '@', 'payments-network', 'g')
+        \ . substitute(l:cmd, '@', 'signer', 'g')
+        \ . substitute(l:cmd, '@', 'unified-api', 'g')
+        \ . substitute(l:cmd, '@', 'unified-api-messages', 'g')
+        \ . substitute(l:cmd, '@', 'TriumphPay', 'g')
+endfunction
+nnoremap <C-p> :call fzf#run(fzf#wrap(fzf#vim#with_preview({ 'source': ProjectFiles() })))<CR>
 
 " Terminal settings
 tnoremap <C-[> <C-\><C-n>
@@ -58,3 +72,10 @@ au FileType cpp setl sw=4 sts=4 et
 au FileType elm setl sw=4 sts=4 et
 au FileType python setl sw=4 sts=4 et
 au FileType swift setl sw=4 sts=4 et
+
+" Elm format
+function! s:withReload(cmd)
+  execute a:cmd
+  edit
+endfunction
+autocmd BufWritePost *.elm call s:withReload('!elm-format --yes %')

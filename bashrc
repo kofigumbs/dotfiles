@@ -19,7 +19,11 @@ source_if_exists /usr/local/etc/bash_completion
 export VISUAL="nvim"
 export EDITOR="nvim"
 export BASH_SILENCE_DEPRECATION_WARNING=1 # ignore macOS deprecation
-export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
+export PS1='\n\[\e[1m\]\w$(__git_ps1)$(__aws_vault)\n$ \[\e[0m\]'
+
+export KBDEBUG_USER=kgumbs
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-11.jdk/Contents/Home
+export PATH="$JAVA_HOME/bin:$PATH:~/.local/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
@@ -48,4 +52,11 @@ screenshot() {
       --window-size="${2:-1024x1024}" \
       --screenshot="$HOME/Desktop/`date +"%Y-%m-%dT%H:%M:%S"`.png" \
       "$URL"
+}
+
+__aws_vault() {
+  if [ ! -z "$AWS_VAULT" ]
+  then
+    printf -- " [$AWS_VAULT]"
+  fi
 }
