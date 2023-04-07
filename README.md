@@ -1,4 +1,4 @@
-# Literate setup script: run with `bash README.md`
+#### Setup script—`exec bash README.md`
 
     set -ex
 
@@ -30,8 +30,4 @@
     git config --global init.defaultBranch main
     git config --global user.useConfigOnly true
     git config --global user.name 'Kofi Gumbs'
-    git config --global --unset-all user.email # per project by default
-
-#### Done! Changes take effect in new terminals
-
-    exit
+    git config --global --unset-all user.email # force per-project decision
