@@ -14,7 +14,7 @@ stty -ixon
 
 source_if_exists() { [ -f $1 ] && . $1; }
 source_if_exists $HOME/.asdf/completions/asdf.bash
-source_if_exists /usr/local/etc/bash_completion
+source_if_exists "`brew --prefix`/etc/bash_completion"
 
 export VISUAL="nvim"
 export EDITOR="nvim"
