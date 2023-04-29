@@ -27,8 +27,11 @@ set winminwidth=20
 set winwidth=84
 syntax on
 
-" Make solarized terminal colors less harsh
+" Tweak colors for Terminal.app Solarized
+set background=light
+set fillchars+=vert:\ 
 highlight Search ctermbg=LightGray
+highlight VertSplit ctermbg=7 guibg=7
 
 " Configure FZF to show untracked files, exclude .gitignore'd files, and use the same directory as fugitive
 nnoremap <C-p> :call fzf#run(fzf#wrap(fzf#vim#with_preview({ 'dir': FugitiveWorkTree(), 'source': 'git ls-files --cached --others --exclude-standard' })))<CR>
@@ -48,10 +51,6 @@ set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 filetype plugin indent on
-
-" Invisible vertical splits
-set fillchars+=vert:\ 
-hi VertSplit ctermbg=7 guibg=7
 
 " Language-specific
 au FileType cpp setl sw=4 sts=4 et
