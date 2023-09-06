@@ -43,8 +43,7 @@ au FileType swift setl sw=4 sts=4 et
 filetype plugin indent on
 
 " Terminal
-tnoremap <C-[> <C-\><C-n>
-tnoremap <Esc> <C-\><C-n>
+set termwinkey=<Esc>
 autocmd TerminalWinOpen * setlocal nonumber
 
 " FZF
