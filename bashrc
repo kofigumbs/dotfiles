@@ -21,8 +21,9 @@ export EDITOR="nvim"
 export BASH_SILENCE_DEPRECATION_WARNING=1 # ignore macOS deprecation
 export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 
-alias tmp='pushd $(mktemp -d)'
 alias ll='ls -AFGgohl'
+alias tmp='pushd $(mktemp -d)'
+alias nvim='vim'
 
 screenshot() {
   URL="$1"

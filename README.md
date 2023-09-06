@@ -8,7 +8,7 @@
     ln -fs $PWD/bashrc ~/.bashrc
     ln -fs $PWD/bash_profile ~/.bash_profile
     ln -fs $PWD/inputrc ~/.inputrc
-    ln -fs $PWD/vimrc ~/.config/nvim/init.vim
+    ln -fs $PWD/vimrc ~/.vimrc
 
 #### Install homebrew
 
@@ -17,8 +17,8 @@
 
 #### Install neovim plugins
 
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    nvim +PlugInstall +qall
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    vim +PlugInstall +qall
 
 #### Install asdf
 
