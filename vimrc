@@ -2,18 +2,14 @@ autocmd!
 
 call plug#begin('~/.vim/plugged')
 Plug 'christoomey/vim-system-copy'
-Plug 'editorconfig/editorconfig-vim'
+Plug 'inkarkat/vim-SyntaxRange'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'maxbrunsfeld/vim-emacs-bindings'
-Plug 'sheerun/vim-polyglot'
 Plug 'tmhedberg/matchit'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 call plug#end()
-
-syntax on
-highlight Search ctermbg=LightGray
 
 set backspace=2
 set fillchars+=vert:\ 
@@ -31,15 +27,21 @@ set wildmenu
 set winminwidth=20
 set winwidth=84
 
+" Highlighting
+syntax on
+highlight Search ctermbg=LightGray
+autocmd FileType ruby call SyntaxRange#Include('\(<<[~-]SQL.*\n\s*\)\@<=.', '^\s*SQL', 'sql')
+autocmd FileType ruby call SyntaxRange#Include('\(<<[~-]ERB.*\n\s*\)\@<=.', '^\s*ERB', 'eruby')
+
 " Indentation
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
-au FileType cpp setl sw=4 sts=4 et
-au FileType elm setl sw=4 sts=4 et
-au FileType python setl sw=4 sts=4 et
-au FileType swift setl sw=4 sts=4 et
+autocmd FileType cpp setlocal sw=4 sts=4 et
+autocmd FileType elm setlocal sw=4 sts=4 et
+autocmd FileType python setlocal sw=4 sts=4 et
+autocmd FileType swift setlocal sw=4 sts=4 et
 filetype plugin indent on
 
 " Terminal
