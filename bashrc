@@ -16,8 +16,6 @@ source_if_exists() { [ -f $1 ] && . $1; }
 source_if_exists $HOME/.asdf/completions/asdf.bash
 source_if_exists "`brew --prefix`/etc/bash_completion"
 
-export VISUAL="nvim"
-export EDITOR="nvim"
 export BASH_SILENCE_DEPRECATION_WARNING=1 # ignore macOS deprecation
 export PS1='\n\[\e[1m\]\w$(__git_ps1)\n$ \[\e[0m\]'
 

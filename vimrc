@@ -30,6 +30,8 @@ set winwidth=84
 " Highlighting
 syntax on
 highlight Search ctermbg=LightGray
+autocmd FileType javascript call SyntaxRange#Include('sql`', '`', 'sql')
+autocmd FileType javascriptreact call SyntaxRange#Include('sql`', '`', 'sql')
 autocmd FileType ruby call SyntaxRange#Include('\(<<[~-]SQL.*\n\s*\)\@<=.', '^\s*SQL', 'sql')
 autocmd FileType ruby call SyntaxRange#Include('\(<<[~-]ERB.*\n\s*\)\@<=.', '^\s*ERB', 'eruby')
 
