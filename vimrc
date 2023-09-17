@@ -22,6 +22,7 @@ set nofoldenable
 set noswapfile
 set nowrap
 set number
+set ruler
 set wildignore+=*/tmp/*,*/elm-stuff/*,*/node_modules/*,*.class,*.pyc,*.beam
 set wildmenu
 set winminwidth=20
