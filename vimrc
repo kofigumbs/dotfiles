@@ -53,3 +53,7 @@ autocmd TerminalWinOpen * setlocal nonumber
 
 " FZF
 nnoremap <C-p> :call fzf#run(fzf#wrap(fzf#vim#with_preview({ 'dir': FugitiveWorkTree(), 'source': 'git ls-files --cached --others --exclude-standard' })))<CR>
+
+" SQL
+let g:ftplugin_sql_omni_key = '<C-;>'
+let g:omni_sql_default_compl_type = 'syntax' " https://github.com/neovim/neovim/issues/14433
