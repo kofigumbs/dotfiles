@@ -20,11 +20,6 @@
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     vim +PlugInstall +qall
 
-#### Install asdf
-
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
-    ~/.asdf/bin/asdf update
-
 #### Configure git
 
     git config --global init.defaultBranch main
